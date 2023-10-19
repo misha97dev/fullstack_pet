@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/null";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+.container {
+  margin: 0 auto;
+}
+html {
+  font-family: "Quicksand", "sans-serif";
+}

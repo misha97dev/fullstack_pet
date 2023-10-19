@@ -1,0 +1,25 @@
+@import "./../../../../assets/styles/variables";
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  border: $primary_blue 1px solid;
+  max-width: 300px;
+  margin: auto;
+  input {
+    flex: 1;
+    padding: 8px;
+  }
+  button {
+    height: 100%;
+    background: $primary_blue;
+    padding: 8px;
+    color: #fff;
+    font-weight: 600;
+  }
+}

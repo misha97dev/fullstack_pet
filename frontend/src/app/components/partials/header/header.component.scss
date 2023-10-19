@@ -1,0 +1,100 @@
+@import "./../../../../assets/styles/variables";
+header {
+  position: relative;
+  background: white;
+  padding: 12px;
+  border-bottom: $primary_blue 1px solid;
+}
+a {
+  color: $primary_blue;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: transparent 1px solid;
+  &:hover {
+    border: $primary_blue 1px solid;
+  }
+}
+.header {
+  &__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    column-gap: 40px;
+  }
+  &__logo {
+    font-weight: 800;
+    font-size: 24px;
+    padding: 8px 12px;
+  }
+}
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  column-gap: 20px;
+}
+a span {
+  background-color: $primary_red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  font-size: 12px;
+}
+.menu {
+  &__container {
+    position: relative;
+    &:hover .menu {
+      display: block;
+    }
+  }
+  position: absolute;
+  z-index: 1;
+  display: none;
+  border: $primary_blue 1px solid;
+  background: #fff;
+  &__item {
+    transition: all 0.3s ease;
+    width: 100%;
+    min-width: 100px;
+    display: block;
+    &:hover {
+      background: $primary_blue;
+      color: #fff;
+    }
+  }
+}
+
+.nav {
+  &__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    column-gap: 8px;
+  }
+}

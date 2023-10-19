@@ -1,0 +1,10 @@
+<div class="search">
+  <input
+    type="text"
+    #search
+    placeholder="Write to search..."
+    (keyup.enter)="submitSearch(search.value)"
+    [value]="searchValue"
+  />
+  <button (click)="submitSearch(search.value)">Submit!</button>
+</div>

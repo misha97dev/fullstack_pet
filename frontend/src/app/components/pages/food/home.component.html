@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="food__search">
+    <app-search></app-search>
+  </div>
+  <div class="food__tags">
+    <app-tags></app-tags>
+  </div>
+  <div class="food__container">
+    <div
+      routerLink="/food/{{ item.id }}"
+      class="food-card"
+      *ngFor="let item of food"
+    >
+      <img [src]="item.imageUrl" [alt]="item.name" />
+      <div class="food-card__name">
+        {{ item.name }}
+        <span class="food-card__favourite {{ item.favourite ? '' : 'not' }}">
+          ❤️
+        </span>
+      </div>
+
+      <div class="food-card__stars">
+        <star-rating
+          [value]="item.stars"
+          [totalstars]="5"
+          checkedcolor="yellow"
+          uncheckedcolor="#dadada"
+          size="24px"
+          [readonly]="true"
+        ></star-rating>
+      </div>
+
+      <div class="food-card__footer">
+        <div class="food-card__origins">
+          <span *ngFor="let origin of item.origins">{{ origin }}</span>
+        </div>
+        <div class="food-card__cook-time">
+          <span>🕝</span>
+          {{ item.cookTime }}min
+        </div>
+      </div>
+      <div class="food-card__price">
+        <span>{{ item.price | currency }}</span>
+      </div>
+    </div>
+  </div>
+</div>

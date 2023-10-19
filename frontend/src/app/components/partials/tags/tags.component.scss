@@ -1,0 +1,31 @@
+@import "./../../../../assets/styles/variables";
+.tags {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 800px;
+  width: 100%;
+  padding: 16px;
+  a {
+    padding: 4px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+    display: block;
+    color: $primary_blue;
+    border: $primary_blue 1px solid;
+    transition: all 0.3s ease;
+    &:hover {
+      background: $primary_blue;
+      color: #fff;
+    }
+  }
+}

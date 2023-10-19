@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="cart">
+    <ul class="cart__list" *ngIf="cart.items.length">
+      <li class="cart__item" *ngFor="let item of cart.items">
+        <img src="{{ item.food.imageUrl }}" alt="" class="cart-item__image" />
+        <div class="cart-item__name">
+          <a routerLink="/food/{{ item.food.id }}" class="cart-item__name">
+            {{ item.food.name }}
+          </a>
+        </div>
+        <div class="cart-item__quantity">
+          <button (click)="changeQuantity(item, -1)">-</button>
+          <h2>{{ item.quantity }}</h2>
+          <button (click)="changeQuantity(item, +1)">+</button>
+        </div>
+        <div class="cart-item__price">{{ item.price | currency }}</div>
+        <button class="cart-item__remove" (click)="removeItem(item)">
+          Remove
+        </button>
+      </li>
+    </ul>
+    <ul class="cart__list" *ngIf="!cart.items.length">
+      <li class="cart__empty">Your cart is empty!</li>
+    </ul>
+    <div class="cart__total">
+      <h2 class="cart-total__title">Total</h2>
+      <div class="cart-total__item">
+        <span>Count:&nbsp;</span>{{ cart.totalCount }}
+      </div>
+      <div class="cart-total__item">
+        <span>Price:&nbsp;</span>{{ cart.totalPrice | currency }}
+      </div>
+      <button class="cart-total__btn">Proceed to Checkout</button>
+    </div>
+  </div>
+</div>
