@@ -5,7 +5,12 @@
   <div class="food__tags">
     <app-tags></app-tags>
   </div>
-  <div class="food__container">
+  <app-not-found
+    [visible]="!food.length"
+    [message]="'Nothing was found! Check your search text'"
+    [resetText]="'Reset search'"
+  ></app-not-found>
+  <div *ngIf="food.length > 0" class="food__container">
     <div
       routerLink="/food/{{ item.id }}"
       class="food-card"

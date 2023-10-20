@@ -1,0 +1,47 @@
+@import "./../../../../assets/styles/variables";
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  &__form {
+    padding: 20px 32px;
+    max-width: 320px;
+    width: 100%;
+    border: $primary_grey 1px solid;
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: $primary_blue;
+    }
+  }
+
+  button {
+    background: transparent;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: $primary_blue;
+    border: $primary_blue 1px solid;
+    padding: 4px 8px;
+    &:disabled {
+      color: $primary_grey;
+      border: $primary_grey 1px solid;
+      pointer-events: none;
+    }
+    &:hover {
+      color: white;
+      background: $primary_blue;
+    }
+  }
+}

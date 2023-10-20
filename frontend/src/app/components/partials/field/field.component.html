@@ -1,0 +1,15 @@
+<app-field-content [label]="label">
+  <div class="field">
+    <input
+      [formControl]="formControl"
+      [type]="type"
+      [placeholder]="placeholder"
+    />
+    <div class="field__error">
+      <app-field-error
+        [control]="control"
+        [errorToggler]="errorToggler"
+      ></app-field-error>
+    </div>
+  </div>
+</app-field-content>

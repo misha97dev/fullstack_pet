@@ -1,0 +1,20 @@
+@import "./../../../../assets/styles/variables";
+.field {
+  position: relative;
+  padding-bottom: 24px;
+  margin-top: 4px;
+  input {
+    width: 100%;
+    padding: 4px 8px;
+    font-size: 16px;
+    border: $primary_grey 1px solid;
+    transition: all 0.3s ease;
+    &:focus {
+      border: $primary_blue 1px solid;
+    }
+  }
+  &__error {
+    position: absolute;
+    bottom: 8px;
+  }
+}

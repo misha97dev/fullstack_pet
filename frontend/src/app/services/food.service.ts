@@ -2,35 +2,29 @@ import { Injectable } from '@angular/core';
 import { IFood } from '../shared/models/food.interface';
 import { sample_foods, sample_tags } from 'src/assets/data';
 import { ITag } from '../shared/models/tag.interface';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FoodService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getAll(): IFood[] {
-    return sample_foods;
+  getAll(): Observable<IFood[]> {
+    return this.http.get<IFood[]>(`${environment.baseUrl}food`);
   }
-  getBySearch(value: string) {
-    return this.getAll().filter((item) =>
-      item.name.toLowerCase().includes(value.toLowerCase())
-    );
+  getBySearch(value: string): Observable<IFood[]> {
+    return this.http.get<IFood[]>(`${environment.baseUrl}food/search/${value}`);
   }
-  getTags(): ITag[] {
-    return sample_tags;
+  getTags(): Observable<ITag[]> {
+    return this.http.get<ITag[]>(`${environment.baseUrl}food/tag`);
   }
-  getByTag(tag: string): IFood[] {
-    if (tag.toLowerCase() === 'all') {
-      return this.getAll();
-    }
-    return this.getAll().filter((item) =>
-      item.tags?.some((tagItem) =>
-        tagItem.toLowerCase().includes(tag.toLowerCase())
-      )
-    );
+  getByTag(tag: string): Observable<IFood[]> {
+    return this.http.get<IFood[]>(`${environment.baseUrl}food/tag/${tag}`);
   }
-  getById(id: string): IFood {
-    return this.getAll().find((item) => item.id == id)!;
+  getById(id: string): Observable<IFood> {
+    return this.http.get<IFood>(`${environment.baseUrl}food/${id}`);
   }
 }

@@ -10,6 +10,8 @@ import { ITag } from 'src/app/shared/models/tag.interface';
 export class TagsComponent {
   tags?: ITag[];
   constructor(foodService: FoodService) {
-    this.tags = foodService.getTags();
+    foodService.getTags().subscribe((response) => {
+      this.tags = response;
+    });
   }
 }

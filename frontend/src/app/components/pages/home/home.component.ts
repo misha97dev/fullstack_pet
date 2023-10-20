@@ -17,15 +17,23 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       if (params.searchValue) {
-        this.food = this.foodService.getBySearch(params.searchValue);
+        this.foodService
+          .getBySearch(params.searchValue)
+          .subscribe((response) => {
+            this.food = response;
+          });
       } else if (params.tagValue) {
-        this.food = this.foodService.getByTag(params.tagValue);
+        this.foodService.getByTag(params.tagValue).subscribe((response) => {
+          this.food = response;
+        });
       } else {
         this.getAll();
       }
     });
   }
   getAll() {
-    this.food = this.foodService.getAll();
+    this.foodService.getAll().subscribe((response) => {
+      this.food = response;
+    });
   }
 }
