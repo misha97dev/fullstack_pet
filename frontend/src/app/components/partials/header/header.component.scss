@@ -5,18 +5,6 @@ header {
   padding: 12px;
   border-bottom: $primary_blue 1px solid;
 }
-a {
-  color: $primary_blue;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: transparent 1px solid;
-  &:hover {
-    border: $primary_blue 1px solid;
-  }
-}
 .header {
   &__container {
     display: -webkit-box;
@@ -34,6 +22,7 @@ a {
     font-weight: 800;
     font-size: 24px;
     padding: 8px 12px;
+    color: $primary_blue;
   }
 }
 ul {
@@ -70,15 +59,17 @@ a span {
     }
   }
   position: absolute;
+  width: 100%;
   z-index: 1;
   display: none;
   border: $primary_blue 1px solid;
   background: #fff;
   &__item {
+    cursor: pointer;
     transition: all 0.3s ease;
-    width: 100%;
-    min-width: 100px;
     display: block;
+    padding: 8px 12px;
+    color: $primary_blue;
     &:hover {
       background: $primary_blue;
       color: #fff;

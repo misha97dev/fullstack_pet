@@ -30,7 +30,9 @@
       <div class="cart-total__item">
         <span>Price:&nbsp;</span>{{ cart.totalPrice | currency }}
       </div>
-      <button class="cart-total__btn">Proceed to Checkout</button>
+      <button class="cart-total__btn" routerLink="/check-order">
+        Check order
+      </button>
     </div>
   </div>
 </div>

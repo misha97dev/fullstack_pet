@@ -1,8 +1,66 @@
 @import "./assets/styles/null";
+@import "./assets/styles/variables";
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 .container {
   margin: 0 auto;
 }
 html {
   font-family: "Quicksand", "sans-serif";
+}
+
+.auth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  &__form {
+    padding: 20px 32px;
+    max-width: 320px;
+    width: 100%;
+    border: $primary_grey 1px solid;
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: $primary_blue;
+    }
+  }
+  &__link {
+    margin-top: 24px;
+    text-align: center;
+    a {
+      color: $primary_blue;
+    }
+  }
+}
+
+.btn {
+  background: transparent;
+  &__blue {
+    background: transparent;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: $primary_blue;
+    border: $primary_blue 1px solid;
+    padding: 4px 8px;
+    &:disabled {
+      color: $primary_grey;
+      border: $primary_grey 1px solid;
+      pointer-events: none;
+    }
+    &:hover {
+      color: white;
+      background: $primary_blue;
+    }
+  }
 }

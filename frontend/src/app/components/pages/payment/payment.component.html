@@ -1,0 +1,30 @@
+<div class="check-order">
+  <h2 class="check-order__title">Order summary</h2>
+
+  <div class="check-order__content">
+    <div class="check-order__items">
+      <div class="order-item" *ngFor="let item of order.items">
+        <img src="{{ item.food.imageUrl }}" alt="" class="order-item__img" />
+        <div class="order-item__name">{{ item.food.name }}</div>
+        <div class="order-item__count">{{ item.quantity }} pcs</div>
+        <div class="order-item__price">{{ item.price | currency }}</div>
+      </div>
+      <div class="check-order__sum">
+        <span>Total:</span> {{ order.totalPrice | currency }}
+      </div>
+    </div>
+    <div class="check-order__form">
+      <div class="order-form__fields">
+        <div class="order-form__item">Name: {{ order.name }}</div>
+        <div class="order-form__item">Address: {{ order.address }}</div>
+      </div>
+      <div class="order-form__map">
+        <h2>Choose address</h2>
+        <app-map [order]="order"></app-map>
+      </div>
+    </div>
+  </div>
+  <div class="pay-btns">
+    <app-paypal-btn [order]="order"></app-paypal-btn>
+  </div>
+</div>

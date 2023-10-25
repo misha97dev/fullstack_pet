@@ -72,15 +72,8 @@
   &__to-cart {
     border: $primary_blue 1px solid;
     padding: 8px 12px;
-    color: $primary_blue;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    background: transparent;
-    width: fit-content;
-    &:hover {
-      background: $primary_blue;
-      color: #fff;
-    }
+    font-size: 20px;
+    margin-left: 0;
+    width: 240px;
   }
 }

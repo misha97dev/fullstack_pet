@@ -55,7 +55,15 @@ router.get(
 router.get(
   "/tag/:searchTag",
   asynceHandler(async (req, res) => {
-    const result = await FoodModel.find({ tags: req.params.searchTag });
+    let result: any = null;
+    if (req.params.searchTag === "All") {
+      result = await FoodModel.find();
+    } else {
+      result = await FoodModel.find({
+        tags: req.params.searchTag,
+      });
+    }
+
     res.send(result);
   })
 );

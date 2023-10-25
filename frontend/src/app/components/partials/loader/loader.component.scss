@@ -1,0 +1,28 @@
+.loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: rgba($color: #000000, $alpha: 0.6);
+  row-gap: 48px;
+  flex-direction: column;
+  z-index: 1;
+  img {
+    width: 200px;
+  }
+  h2 {
+    font-size: 48px;
+    color: white;
+    font-weight: 700;
+  }
+}

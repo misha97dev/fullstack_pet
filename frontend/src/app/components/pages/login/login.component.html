@@ -1,5 +1,5 @@
-<div class="login">
-  <form class="login__form" [formGroup]="loginForm" (ngSubmit)="submit()">
+<div class="auth">
+  <form class="auth__form" [formGroup]="loginForm" (ngSubmit)="submit()">
     <h2>Login</h2>
 
     <app-field
@@ -18,7 +18,10 @@
       [placeholder]="'Enter password'"
     ></app-field>
 
-    <div class="login__error">error!</div>
-    <button type="submit">Login</button>
+    <button type="submit" class="btn__blue">Login</button>
+    <div class="auth__link">
+      <span>Have not an account?</span>&nbsp;
+      <a routerLink="/registration">Create</a>
+    </div>
   </form>
 </div>

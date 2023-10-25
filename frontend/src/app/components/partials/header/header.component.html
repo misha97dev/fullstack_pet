@@ -4,12 +4,15 @@
     <nav>
       <ul>
         <li *ngIf="!user.token">
-          <a class="nav__item" routerLink="/login">Login</a>
+          <a class="nav__item btn__blue" routerLink="/login">Login</a>
         </li>
         <li class="menu__container">
-          <a class="nav__item" routerLink="/dashboard" *ngIf="user.token">{{
-            user.name
-          }}</a>
+          <a
+            class="btn__blue nav__item"
+            routerLink="/dashboard"
+            *ngIf="user.token"
+            >{{ user.name }}</a
+          >
           <div class="menu">
             <a class="menu__item" routerLink="/profile">Profile</a>
             <a class="menu__item" routerLink="/orders">Orders</a>
@@ -17,7 +20,7 @@
           </div>
         </li>
         <li>
-          <a class="nav__item" routerLink="/cart">
+          <a class="nav__item btn__blue" routerLink="/cart">
             Cart <span>{{ totalItemsCart }}</span>
           </a>
         </li>

@@ -10,6 +10,8 @@ import { AbstractControl } from '@angular/forms';
 const messagesArr: any = {
   required: 'Field is required!',
   email: 'Invalid email format',
+  minlength: 'Too short value',
+  notMatch: 'Passwords are different',
 };
 
 @Component({

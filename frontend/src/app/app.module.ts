@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/partials/header/header.component';
@@ -18,6 +18,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { FieldComponent } from './components/partials/field/field.component';
 import { FieldErrorComponent } from './components/partials/field/field-error/field-error.component';
 import { FieldContentComponent } from './components/partials/field/field-content/field-content.component';
+import { RegistrationComponent } from './components/pages/registration/registration.component';
+import { LoaderComponent } from './components/partials/loader/loader.component';
+import { LoaderInterceptor } from './shared/interceptors/loader.interceptor';
+import { CheckOrderComponent } from './components/pages/check-order/check-order.component';
+import { MapComponent } from './components/partials/map/map.component';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { PaymentComponent } from './components/pages/payment/payment.component';
+import { PaypalBtnComponent } from './components/partials/paypal-btn/paypal-btn.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +41,12 @@ import { FieldContentComponent } from './components/partials/field/field-content
     FieldComponent,
     FieldErrorComponent,
     FieldContentComponent,
+    RegistrationComponent,
+    LoaderComponent,
+    CheckOrderComponent,
+    MapComponent,
+    PaymentComponent,
+    PaypalBtnComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +61,10 @@ import { FieldContentComponent } from './components/partials/field/field-content
     }),
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

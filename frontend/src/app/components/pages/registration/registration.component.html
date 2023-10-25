@@ -1,0 +1,51 @@
+<div class="auth">
+  <form class="auth__form" [formGroup]="registerForm" (ngSubmit)="submit()">
+    <h2>Registration</h2>
+
+    <app-field
+      [label]="'Email'"
+      [errorToggler]="isSubmitted"
+      [type]="'email'"
+      [control]="fc.email"
+      [placeholder]="'Enter email'"
+    ></app-field>
+
+    <app-field
+      [label]="'Name'"
+      [errorToggler]="isSubmitted"
+      [type]="'text'"
+      [control]="fc.name"
+      [placeholder]="'Enter name'"
+    ></app-field>
+
+    <app-field
+      [label]="'Password'"
+      [errorToggler]="isSubmitted"
+      [type]="'password'"
+      [control]="fc.password"
+      [placeholder]="'Enter password'"
+    ></app-field>
+
+    <app-field
+      [label]="'Confirm password'"
+      [errorToggler]="isSubmitted"
+      [type]="'password'"
+      [control]="fc.confirmPassword"
+      [placeholder]="'Confirm password'"
+    ></app-field>
+
+    <app-field
+      [label]="'Address'"
+      [errorToggler]="isSubmitted"
+      [type]="'text'"
+      [control]="fc.address"
+      [placeholder]="'Enter address'"
+    ></app-field>
+
+    <button type="submit" class="btn__blue">Submit</button>
+    <div class="auth__link">
+      <span>Already have an account?</span>&nbsp;
+      <a routerLink="/login">Login</a>
+    </div>
+  </form>
+</div>
